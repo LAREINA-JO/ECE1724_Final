@@ -1,6 +1,8 @@
-FROM vahidmostofi/hadoop-base
+FROM wxwmatt/hadoop-base:2.1.1-hadoop3.3.1-java8
 
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      python3.6
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 HEALTHCHECK CMD curl -f http://localhost:8188/ || exit 1
 

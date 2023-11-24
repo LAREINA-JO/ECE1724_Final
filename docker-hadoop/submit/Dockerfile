@@ -1,6 +1,4 @@
-FROM vahidmostofi/hadoop-base
-
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+FROM wxwmatt/hadoop-base:2.1.1-hadoop3.3.1-java8
 
 COPY WordCount.jar /opt/hadoop/applications/WordCount.jar
 
