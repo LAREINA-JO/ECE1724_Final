@@ -29,8 +29,8 @@ hadoop fs -put data /inputs
 ```console
 hdfs dfs -rm -r /outputs/result
 ```
-```console
 
+```console
 hadoop jar /opt/hadoop-3.3.1/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
     -D map.output.key.field.separator=- \
     -D mapred.text.key.partitioner.options=-k1,1 \
@@ -42,9 +42,9 @@ hadoop jar /opt/hadoop-3.3.1/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
     -input /inputs/data \
     -output /outputs/result \
     -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner
-    ```
-```console
+```
 
+```console
 hdfs dfs -ls /outputs/result
 ```
 ```console
