@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/WordCount" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-annotations/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-auth-examples/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-auth/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-auth/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-common/dev-support/jdiff" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-common/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-common/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-kms/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-kms/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-minikdc/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-minikdc/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-nfs/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-common-project/hadoop-nfs/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-client/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-client/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-httpfs/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-httpfs/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-native-client/src/main/native/fuse-dfs/test" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-nfs/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-nfs/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-rbf/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs-rbf/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs/dev-support/jdiff" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs/src/contrib/bkjournal/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs/src/contrib/bkjournal/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs/src/test/aop" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-hdfs-project/hadoop-hdfs/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/dev-support/jdiff" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-app/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-core/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs-plugins/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs-plugins/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-hs/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-jobclient/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-shuffle/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-shuffle/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-maven-plugins/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-aliyun/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-aliyun/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-ant/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-archive-logs/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-archive-logs/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-archives/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-archives/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-aws/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-aws/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-azure-datalake/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-azure-datalake/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-azure/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-azure/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-datajoin/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-datajoin/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-distcp/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-distcp/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-extras/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-extras/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-gridmix/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-gridmix/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-openstack/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-openstack/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-resourceestimator/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-resourceestimator/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-rumen/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-rumen/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-sls/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-sls/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-streaming/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-tools/hadoop-streaming/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/dev-support/jdiff" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-api/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-distributedshell/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-distributedshell/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-unmanaged-am-launcher/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-unmanaged-am-launcher/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-client/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-client/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-registry/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-registry/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-applicationhistoryservice/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-common/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-router/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-router/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-sharedcachemanager/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-sharedcachemanager/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-tests/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timeline-pluginstorage/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timeline-pluginstorage/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase-tests/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice-hbase/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-timelineservice/src/test/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-web-proxy/src/main/java" />
+          <root url="file://F:/hadoop-2.9.2-src/hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-web-proxy/src/test/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/WordCount/Hadoop" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="java" level="project" />
+  </component>
+</module>
