@@ -1,0 +1,3 @@
+2023-12-08 15:07:55,537 WARN org.apache.hadoop.util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2023-12-08 15:07:55,989 WARN org.apache.hadoop.metrics2.impl.MetricsConfig: Cannot locate configuration: tried hadoop-metrics2-jobtracker.properties,hadoop-metrics2.properties
+2023-12-08 15:07:56,313 WARN org.apache.hadoop.mapreduce.JobResourceUploader: No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
