@@ -46,17 +46,7 @@ hdfs dfs -rm -r /outputs/result
 
 # Run the MapReduce job
 echo "Running MapReduce job..."
-hadoop jar /opt/hadoop-3.3.1/share/hadoop/tools/lib/hadoop-streaming-3.3.1.jar \
-    -D map.output.key.field.separator=- \
-    -D mapred.text.key.partitioner.options=-k1,1 \
-    -D mapred.reduce.tasks=5 \
-    -file $PWD/jars/mapper.py \
-    -file $PWD/jars/reducer.py \
-    -mapper mapper.py \
-    -reducer reducer.py \
-    -input /inputs/data \
-    -output /outputs/result \
-    -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner
+hadoop jar jars/WordCount.jar /inputs/data /outputs/result
 
 echo "MapReduce job completed."
 hdfs dfs -ls /outputs/result
@@ -65,6 +55,3 @@ echo "Copy the output to the local filesystem..."
 rm -r /outputs/res_out_of_hdfs
 mkdir -p /outputs/res_out_of_hdfs
 hdfs dfs -copyToLocal /outputs/result/* /outputs/res_out_of_hdfs
-
-
-

@@ -1,11 +1,6 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.StringTokenizer;
 
 import org.apache.hadoop.conf.Configuration;
@@ -17,145 +12,90 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.mapreduce.Counter;
-import org.apache.hadoop.util.GenericOptionsParser;
-import org.apache.hadoop.util.StringUtils;
 import org.apache.log4j.Logger;
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class WordCount {
 
-  public static class TokenizerMapper
-          extends Mapper<Object, Text, Text, IntWritable>{
+  /**
+   * The Mapper class for word count. It extends Hadoop's Mapper class.
+   */
+  public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable>{
 
-    // Logger instance for logging
-    private static final Logger logger = Logger.getLogger(TokenizerMapper.class);
-
-    static enum CountersEnum { INPUT_WORDS }
-
+    // A constant to represent a word count of one.
     private final static IntWritable one = new IntWritable(1);
+    // A Text object to hold each word that is processed.
     private Text word = new Text();
 
-    private boolean caseSensitive;
-    private Set<String> patternsToSkip = new HashSet<String>();
-
-    private Configuration conf;
-    private BufferedReader fis;
-
-
-    @Override
-    public void setup(Context context) throws IOException,
-            InterruptedException {
-      conf = context.getConfiguration();
-      caseSensitive = conf.getBoolean("wordcount.case.sensitive", true);
-      if (conf.getBoolean("wordcount.skip.patterns", false)) {
-        URI[] patternsURIs = Job.getInstance(conf).getCacheFiles();
-        for (URI patternsURI : patternsURIs) {
-          Path patternsPath = new Path(patternsURI.getPath());
-          String patternsFileName = patternsPath.getName().toString();
-          parseSkipFile(patternsFileName);
-        }
-      }
-    }
-
-    private void parseSkipFile(String fileName) {
-      try {
-        fis = new BufferedReader(new FileReader(fileName));
-        String pattern = null;
-        while ((pattern = fis.readLine()) != null) {
-          patternsToSkip.add(pattern);
-        }
-      } catch (IOException ioe) {
-        System.err.println("Caught exception while parsing the cached file '"
-                + StringUtils.stringifyException(ioe));
-      }
-    }
-
-    @Override
-    public void map(Object key, Text value, Context context
-    ) throws IOException, InterruptedException {
-      // Start time
-      long startTime = System.currentTimeMillis();
-      String line = (caseSensitive) ?
-              value.toString() : value.toString().toLowerCase();
-      for (String pattern : patternsToSkip) {
-        line = line.replaceAll(pattern, "");
-      }
-      StringTokenizer itr = new StringTokenizer(line);
+    /**
+     * The map method of the Mapper.
+     * @param key Input key, not used in this example.
+     * @param value A line of text from the input data.
+     * @param context The context to write output to.
+     */
+    public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+      // Tokenizing the line of text into words.
+      StringTokenizer itr = new StringTokenizer(value.toString());
       while (itr.hasMoreTokens()) {
+        // Set the word as text.
         word.set(itr.nextToken());
+        // Write the word with a count of one to the context.
         context.write(word, one);
-        Counter counter = context.getCounter(CountersEnum.class.getName(),
-                CountersEnum.INPUT_WORDS.toString());
-        counter.increment(1);
       }
-
-      // End time and duration calculation
-      long endTime = System.currentTimeMillis();
-      long duration = endTime - startTime;
-
-      // Logging the duration
-      logger.info("Map task duration: " + duration + " ms");
     }
   }
 
-  public static class IntSumReducer
-          extends Reducer<Text,IntWritable,Text,IntWritable> {
-
-    // Logger instance for logging
-    private static final Logger logger = Logger.getLogger(IntSumReducer.class);
-
+  /**
+   * The Reducer class for word count. It extends Hadoop's Reducer class.
+   */
+  public static class IntSumReducer extends Reducer<Text,IntWritable,Text,IntWritable> {
+    // A writable integer to hold the sum of counts.
     private IntWritable result = new IntWritable();
 
-    public void reduce(Text key, Iterable<IntWritable> values,
-                       Context context
-    ) throws IOException, InterruptedException {
-      // Start time
-      long startTime = System.currentTimeMillis();
-
+    /**
+     * The reduce method of the Reducer.
+     * @param key The word.
+     * @param values The counts associated with the word.
+     * @param context The context to write output to.
+     */
+    public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
       int sum = 0;
+      // Sum up the counts for the word.
       for (IntWritable val : values) {
         sum += val.get();
       }
+      // Set the sum in result.
       result.set(sum);
+      // Write the word and its total count to the context.
       context.write(key, result);
-      // End time and duration calculation
-      long endTime = System.currentTimeMillis();
-      long duration = endTime - startTime;
-
-      // Logging the duration
-      logger.info("Reduce task duration: " + duration + " ms");
-
     }
   }
 
+  /**
+   * The main method to set up the MapReduce job.
+   * @param args Command line arguments, expected two paths: input and output directory.
+   */
   public static void main(String[] args) throws Exception {
+    // Setting up Hadoop MapReduce job configuration.
     Configuration conf = new Configuration();
-    GenericOptionsParser optionParser = new GenericOptionsParser(conf, args);
-    String[] remainingArgs = optionParser.getRemainingArgs();
-    if ((remainingArgs.length != 2) && (remainingArgs.length != 4)) {
-      System.err.println("Usage: wordcount <in> <out> [-skip skipPatternFile]");
-      System.exit(2);
-    }
     Job job = Job.getInstance(conf, "word count");
+    // Setting the class.
     job.setJarByClass(WordCount.class);
+    // Setting the Mapper class.
     job.setMapperClass(TokenizerMapper.class);
+    // Setting the combiner class, which is the Reducer used during the Map phase.
     job.setCombinerClass(IntSumReducer.class);
+    // Setting the Reducer class.
     job.setReducerClass(IntSumReducer.class);
+    // Setting the output key and value classes.
     job.setOutputKeyClass(Text.class);
     job.setOutputValueClass(IntWritable.class);
-
-    List<String> otherArgs = new ArrayList<String>();
-    for (int i=0; i < remainingArgs.length; ++i) {
-      if ("-skip".equals(remainingArgs[i])) {
-        job.addCacheFile(new Path(remainingArgs[++i]).toUri());
-        job.getConfiguration().setBoolean("wordcount.skip.patterns", true);
-      } else {
-        otherArgs.add(remainingArgs[i]);
-      }
-    }
-    FileInputFormat.addInputPath(job, new Path(otherArgs.get(0)));
-    FileOutputFormat.setOutputPath(job, new Path(otherArgs.get(1)));
-
+    // Setting the paths for input and output directories.
+    FileInputFormat.addInputPath(job, new Path(args[0]));
+    FileOutputFormat.setOutputPath(job, new Path(args[1]));
+    // Exit the program when the job is finished.
     System.exit(job.waitForCompletion(true) ? 0 : 1);
   }
 }
