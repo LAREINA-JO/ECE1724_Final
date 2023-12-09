@@ -13,6 +13,9 @@ To package the .jar file:
 
 To run the .jar file: `java -jar WordCount.jar shakespeare.txt output`
 
+  
+  
+
 WordCountTest is for black-box JUnit testing, and MapperTest and ReducerTest are for white-box JUnit testing
 
 To run the test by command:
