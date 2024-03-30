@@ -37,7 +37,7 @@ hadoop fs -mkdir -p /inputs
 
 # Put data into the input directory on HDFS
 echo "Putting data into HDFS..."
-hadoop fs -put data /inputs
+hadoop fs -put /app/data /inputs
 
 
 # Remove the previous output directory, if it exists
@@ -46,7 +46,7 @@ hdfs dfs -rm -r /outputs/result
 
 # Run the MapReduce job
 echo "Running MapReduce job..."
-hadoop jar jars/WordCount.jar /inputs/data /outputs/result
+hadoop jar /app/jars/WordCount.jar /inputs/data /outputs/result
 
 echo "MapReduce job completed."
 hdfs dfs -ls /outputs/result
