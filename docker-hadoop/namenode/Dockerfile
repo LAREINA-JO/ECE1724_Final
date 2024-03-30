@@ -20,7 +20,7 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 # RUN pip3 install numpy
 # RUN pip3 install pandas
 
-COPY ./jobs/jars/WordCount.jar /app/jars/WordCount.jar
+COPY ./WordCount.jar /app/jars/WordCount.jar
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
       gcc \
