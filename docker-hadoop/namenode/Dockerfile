@@ -20,8 +20,8 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 # RUN pip3 install numpy
 # RUN pip3 install pandas
 
-COPY ./jobs/jars /app
-COPY ./jobs/data /app
+COPY ./jobs/jars /app/jars
+COPY ./jobs/data /app/data
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
       gcc \
