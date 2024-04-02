@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="java1">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/WordCount/junit5-main/platform-tooling-support-tests/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
